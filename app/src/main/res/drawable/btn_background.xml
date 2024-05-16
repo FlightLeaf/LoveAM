@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/clr_pressed" /> <!-- 替换 @color/clr_pressed 为你的颜色值 -->
+
+    <corners android:radius="0dp" /> <!-- 设置为0dp以得到方角 -->
+
+    <padding
+        android:bottom="4dp"
+        android:left="4dp"
+        android:right="4dp"
+        android:top="4dp" /> <!-- 根据需要调整内边距 -->
+</shape>

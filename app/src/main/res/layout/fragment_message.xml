@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".fragment.MineFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_name"
+        android:textColor="#000"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/buttonGo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2167F3"
+        android:text="作业一"
+        app:cornerRadius="0dp"
+        android:padding="5dp"
+        app:icon="@drawable/baseline_login_24" />
+
+    <Button
+        android:id="@+id/buttonGo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2167F3"
+        android:text="作业二"
+        app:cornerRadius="0dp"
+        android:padding="5dp"
+        app:icon="@drawable/baseline_login_24" />
+
+    <Button
+        android:id="@+id/buttonGo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2167F3"
+        android:text="Kotlin_TEST"
+        app:cornerRadius="0dp"
+        android:padding="5dp"
+        app:icon="@drawable/baseline_login_24" />
+
+    <Button
+        android:id="@+id/buttonGo4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2167F3"
+        android:text="EDIT"
+        app:cornerRadius="0dp"
+        android:padding="5dp"
+        app:icon="@drawable/baseline_login_24" />
+</LinearLayout>

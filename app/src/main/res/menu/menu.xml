@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/fragment_home"
+        android:icon="@drawable/round_home_24"
+        android:title="@string/home_name" />
+    <item
+        android:id="@+id/fragment_write"
+        android:icon="@drawable/round_edit_24"
+        android:iconTintMode="add"
+        android:title="@string/write_name" />
+    <item
+        android:id="@+id/fragment_ai"
+        android:icon="@drawable/round_mark_unread_chat_alt_24"
+        android:title="@string/ai_name" />
+    <item
+        android:id="@+id/fragment_message"
+        android:icon="@drawable/round_person_24"
+        android:title="@string/my_name" />
+</menu>

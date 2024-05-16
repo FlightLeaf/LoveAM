@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.LoveAM" parent="Theme.Material3.Light.NoActionBar">
+    </style>
+
+
+    <style name="Theme.LoveAM" parent="Base.Theme.LoveAM" />
+
+    <style name="Theme.LoveAM.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
+
+    </style>
+
+    <style name="Theme.LoveAM.AppWidgetContainer" parent="Theme.LoveAM.AppWidgetContainerParent">
+
+    </style>
+
+    <style name="fragment">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+</resources>
