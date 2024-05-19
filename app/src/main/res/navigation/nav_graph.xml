@@ -14,16 +14,10 @@
 
     <fragment
         android:id="@+id/fragment_ai"
-        android:name="com.stop.loveam.fragment.ChatFragment"
+        android:name="com.stop.loveam.fragment.ChatAIFragment"
         android:label="fragment_ai"
         tools:layout="@layout/fragment_ai">
     </fragment>
-
-    <fragment
-        android:id="@+id/fragment_write"
-        android:name="com.stop.loveam.fragment.EditFragment"
-        android:label="fragment_write"
-        tools:layout="@layout/fragment_write" />
 
     <fragment
         android:id="@+id/fragment_message"

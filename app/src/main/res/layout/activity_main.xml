@@ -19,7 +19,7 @@
 
     <Button
         android:id="@+id/btn_logorzhuce"
-        android:layout_width="444dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
@@ -27,18 +27,20 @@
         android:onClick="onLoginClick"
         android:text="登录/注册"
         android:textColor="@color/white"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        app:cornerRadius="0dp" />
 
     <Button
         android:id="@+id/btn_skip"
-        android:layout_width="447dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/clr_pressed"
+        android:backgroundTint="@color/aliceblue"
         android:onClick="onSkipClick"
         android:text="访客模式"
-        android:textColor="@color/white"
-        android:textSize="15sp" />
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:cornerRadius="0dp" />
 
 </LinearLayout>

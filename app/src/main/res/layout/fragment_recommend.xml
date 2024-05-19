@@ -6,6 +6,18 @@
     android:orientation="vertical"
     tools:context=".fragment.RecommendFragment">
 
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_view_big"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_view_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/newsView"
         android:layout_width="match_parent"

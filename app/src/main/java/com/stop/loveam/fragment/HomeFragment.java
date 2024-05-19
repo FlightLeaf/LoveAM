@@ -2,7 +2,6 @@ package com.stop.loveam.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,25 +29,20 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Fragment followFragment = new FollowFragment();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.add(R.id.layout_home_child, followFragment).commit();
+        transaction.replace(R.id.layout_home_child, new RecoFragment()).commit();
 
         TabLayout tabLayout = view.findViewById(R.id.tab_layout_);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                Log.d(TAG, "onTabSelected: " + tab.getPosition());
                 if (tab.getPosition() == 0) {
                     FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-                    transaction.replace(R.id.layout_home_child, new FollowFragment()).commit();
+                    transaction.replace(R.id.layout_home_child, new RecoFragment()).commit();
                 } else if (tab.getPosition() == 1) {
                     FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-                    transaction.replace(R.id.layout_home_child, new RecommendFragment()).commit();
-                } else if (tab.getPosition() == 2) {
-                    FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-                    transaction.replace(R.id.layout_home_child, new VideoFragment()).commit();
+                    transaction.replace(R.id.layout_home_child, new FollowFragment()).commit();
                 }
             }
 

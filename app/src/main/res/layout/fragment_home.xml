@@ -31,47 +31,40 @@
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tab_layout_"
                     android:layout_width="wrap_content"
-                    android:layout_height="42dp"
+                    android:layout_height="35dp"
                     android:background="@drawable/shape_tab_bg"
                     app:tabIndicator="@drawable/shape_full_tab_indicator"
                     app:tabIndicatorColor="@color/red"
                     app:tabIndicatorFullWidth="true"
-                    app:tabIndicatorHeight="42dp"
+                    app:tabIndicatorHeight="35dp"
                     app:tabMinWidth="62dp"
                     app:tabMode="fixed"
                     app:tabSelectedTextColor="@color/white"
                     app:tabTextColor="@color/black">
 
                     <com.google.android.material.tabs.TabItem
-                        android:id="@+id/follow_tab"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/follow" />
-
-                    <com.google.android.material.tabs.TabItem
                         android:id="@+id/recommend_tab"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/recommend" />
-
                     <com.google.android.material.tabs.TabItem
-                        android:id="@+id/video_tab"
+                        android:id="@+id/follow_tab"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/video" />
+                        android:text="@string/follow" />
                 </com.google.android.material.tabs.TabLayout>
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/search_image"
                 android:layout_width="wrap_content"
-                android:layout_height="42dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
                 android:src="@drawable/round_search_24"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:paddingRight="15dp"
+                android:paddingRight="18dp"
                 app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,14 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".fragment.MineFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:paddingTop="18dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/set_image"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/round_settings_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:paddingRight="18dp"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/my_name"
+        android:layout_gravity="center"
         android:textColor="#000"
         android:textSize="24sp" />
 
@@ -20,6 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#2167F3"
+        android:layout_gravity="center"
         android:text="作业一"
         app:cornerRadius="0dp"
         android:padding="5dp"
@@ -29,6 +57,7 @@
         android:id="@+id/buttonGo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:backgroundTint="#2167F3"
         android:text="作业二"
         app:cornerRadius="0dp"
@@ -38,6 +67,7 @@
     <Button
         android:id="@+id/buttonGo3"
         android:layout_width="wrap_content"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:backgroundTint="#2167F3"
         android:text="Kotlin_TEST"
@@ -49,6 +79,7 @@
         android:id="@+id/buttonGo4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:backgroundTint="#2167F3"
         android:text="EDIT"
         app:cornerRadius="0dp"

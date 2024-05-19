@@ -4,10 +4,61 @@
     <string name="nav_go_to_login">点击登录……</string>
     <string name="menu_user">立即登录</string>
     <string name="home_name">首页</string>
-    <string name="write_name">创作</string>
-    <string name="ai_name">助手</string>
+    <string name="video_name">视频</string>
+    <string name="ai_name">探索</string>
     <string name="my_name">我的</string>
     <string name="follow">关注</string>
     <string name="recommend">推荐</string>
     <string name="video">视频</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- 消息设置 -->
+    <string name="messages_header">消息设置</string>
+    <string name="signature_title">签名</string>
+    <string name="reply_title">回复设置</string>
+
+    <!-- 同步设置 -->
+    <string name="sync_header">同步设置</string>
+    <string name="sync_title">同步</string>
+    <string name="attachment_title">附件</string>
+    <string name="attachment_summary_on">同步附件</string>
+    <string name="attachment_summary_off">不同步附件</string>
+
+    <!-- 常用选项 -->
+    <string name="common_settings">常用选项</string>
+    <string name="notifications_title">通知</string>
+    <string name="notifications_summary_on">开启通知</string>
+    <string name="notifications_summary_off">关闭通知</string>
+    <string name="theme_title">主题</string>
+    <string name="language_title">语言</string>
+    <string name="clear_cache_title">清除缓存</string>
+    <string name="clear_cache_summary">清除应用缓存数据</string>
+
+    <string-array name="theme_entries">
+        <item>默认主题</item>
+        <item>浅色主题</item>
+        <item>深色主题</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>default</item>
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
+    <string-array name="language_entries">
+        <item>简体中文</item>
+        <item>英语</item>
+        <!-- 添加更多语言选项 -->
+    </string-array>
+
+    <string-array name="language_values">
+        <item>zh-CN</item>
+        <item>en</item>
+        <!-- 添加更多语言代码 -->
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_title">添加标题</string>
+
 </resources>

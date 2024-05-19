@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stop.loveam.R;
 import com.stop.loveam.entity.News;
-import com.stop.loveam.view.NewsAdapterA;
-import com.stop.loveam.view.NewsAdapterB;
+import com.stop.loveam.view.NewsAdapterBig;
+import com.stop.loveam.view.NewsAdapterSmall;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,9 +30,9 @@ public class RecommendFragment extends Fragment {
 
     private RecyclerView newsView;
 
-    private NewsAdapterA adapterA;
+    private NewsAdapterBig adapterA;
 
-    private NewsAdapterB adapterB;
+    private NewsAdapterSmall adapterB;
     private List<News> newsList;
 
     @Nullable
@@ -52,15 +52,15 @@ public class RecommendFragment extends Fragment {
         newsView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         newsList = getNewsList(); // Implement this method to get your news data
-        adapterA = new NewsAdapterA(newsList);
-        adapterB = new NewsAdapterB(newsList);
+        adapterA = new NewsAdapterBig(newsList);
+        adapterB = new NewsAdapterSmall(newsList);
         recyclerView.setAdapter(adapterA);
         newsView.setAdapter(adapterB);
     }
 
     private List<News> getNewsList() {
         List<News> newsList = new ArrayList<>();
-        newsList.add(new News("水果", "新闻1的内容", "https://img3.redocn.com/tupian/20140827/shuiguosucai_2970523.jpg", "2024-5-11","水果日报"));
+        //newsList.add(new News("水果", "新闻1的内容", "https://img3.redocn.com/tupian/20140827/shuiguosucai_2970523.jpg", "2024-5-11","水果日报"));
         return newsList;
     }
 }

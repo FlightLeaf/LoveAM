@@ -7,10 +7,10 @@
         android:icon="@drawable/round_home_24"
         android:title="@string/home_name" />
     <item
-        android:id="@+id/fragment_write"
+        android:id="@+id/fragment_movie"
         android:icon="@drawable/round_edit_24"
         android:iconTintMode="add"
-        android:title="@string/write_name" />
+        android:title="@string/video_name" />
     <item
         android:id="@+id/fragment_ai"
         android:icon="@drawable/round_mark_unread_chat_alt_24"

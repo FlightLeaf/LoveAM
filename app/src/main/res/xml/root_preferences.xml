@@ -1,0 +1,67 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 消息设置 -->
+    <PreferenceCategory app:title="@string/messages_header"
+        app:icon="@drawable/ic_message_settings">
+        <EditTextPreference
+            app:key="signature"
+            app:title="@string/signature_title"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/ic_signature" />
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/ic_reply" />
+    </PreferenceCategory>
+
+    <!-- 同步设置 -->
+    <PreferenceCategory app:title="@string/sync_header"
+        app:icon="@drawable/round_cloud_sync_24">
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title"
+            app:icon="@drawable/ic_sync" />
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title"
+            app:icon="@drawable/ic_attachment" />
+    </PreferenceCategory>
+
+    <!-- 常用选项 -->
+    <PreferenceCategory app:title="@string/common_settings"
+        app:icon="@drawable/ic_common_settings">
+        <SwitchPreferenceCompat
+            app:key="notifications"
+            app:title="@string/notifications_title"
+            app:summaryOn="@string/notifications_summary_on"
+            app:summaryOff="@string/notifications_summary_off"
+            app:icon="@drawable/ic_notifications" />
+        <ListPreference
+            app:key="theme"
+            app:title="@string/theme_title"
+            app:entries="@array/theme_entries"
+            app:entryValues="@array/theme_values"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/ic_theme" />
+        <ListPreference
+            app:key="language"
+            app:title="@string/language_title"
+            app:entries="@array/language_entries"
+            app:entryValues="@array/language_values"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/round_language_24" />
+        <Preference
+            app:key="clear_cache"
+            app:title="@string/clear_cache_title"
+            app:summary="@string/clear_cache_summary"
+            app:icon="@drawable/ic_clear_cache" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
