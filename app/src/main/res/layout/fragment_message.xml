@@ -85,4 +85,54 @@
         app:cornerRadius="0dp"
         android:padding="5dp"
         app:icon="@drawable/baseline_login_24" />
+
+    <Button
+        android:id="@+id/buttonGo5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#2167F3"
+        android:text="权限"
+        app:cornerRadius="0dp"
+        android:padding="5dp"
+        app:icon="@drawable/baseline_login_24" />
+    <Button
+        android:id="@+id/buttonGo6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#2167F3"
+        android:text="写入文件"
+        app:cornerRadius="0dp"
+        android:padding="5dp"
+        app:icon="@drawable/baseline_login_24" />
+
+    <Button
+        android:id="@+id/buttonGo7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#2167F3"
+        android:text="写入SharedPreferences"
+        app:cornerRadius="0dp"
+        android:padding="5dp"
+        app:icon="@drawable/baseline_login_24" />
+
+    <com.stop.loveam.view.NumberView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:defaultValue="1" />
+
+    <Button
+        android:id="@+id/buttonGo8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#2167F3"
+        android:text="购物车SQLite"
+        app:cornerRadius="0dp"
+        android:padding="5dp"
+        app:icon="@drawable/baseline_login_24" />
 </LinearLayout>

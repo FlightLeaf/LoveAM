@@ -1,10 +1,12 @@
 package com.stop.loveam.fragment
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,31 +15,13 @@ import com.stop.loveam.R
 import com.stop.loveam.compose.UPCButtonGroup
 import com.stop.loveam.view.NewsFileAdapter
 
-/**
- * RecoFragment类是一个Fragment，用于展示推荐内容。
- */
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
+import com.stop.loveam.activity.AddNewsActivity
+
 class ChatAIFragment : Fragment() {
 
-    /**
-     * onCreate函数在Fragment创建时被调用，用于执行Fragment的初始化逻辑。
-     *
-     * @param savedInstanceState 如果Fragment在重建（如横竖屏切换），则此处包含之前保存的状态信息。
-     */
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // 这里可以添加Fragment的初始化代码，例如数据的加载等。
-    }
-
-    /**
-     * onCreateView函数用于创建Fragment的视图。
-     *
-     * @param inflater           用于加载布局文件的LayoutInflater。
-     * @param container          承载Fragment的ViewGroup，如果Fragment不提供UI，则可以为null。
-     * @param savedInstanceState 如果Fragment在重建（如横竖屏切换），则此处包含之前保存的状态信息。
-     * @return 返回Fragment的根视图。
-     */
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,6 +35,29 @@ class ChatAIFragment : Fragment() {
             }
         }
 
+        val addNews: ImageView? = view.findViewById(R.id.addNews)
+        addNews?.setOnClickListener {
+            // 创建AlertDialog.Builder实例
+            val builder = AlertDialog.Builder(requireContext())
+            // 设置标题
+            builder.setTitle("选择操作")
+            // 设置选项，并添加点击事件
+            builder.setItems(R.array.news_options) { dialog, which ->
+                // 根据用户的选择进行操作
+                when (which) {
+                    0 -> {
+                        //跳转
+                        val intent = Intent(requireContext(), AddNewsActivity::class.java)
+                        startActivity(intent)
+                    }
+                    1 -> {
+                        // 用户选择了第二个选项
+                    }
+                }
+            }
+            builder.create().show()
+        }
         return view
     }
 }
+

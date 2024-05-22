@@ -19,4 +19,14 @@
         android:id="@+id/fragment_message"
         android:icon="@drawable/round_person_24"
         android:title="@string/my_name" />
+
+    <item
+        android:id="@+id/fragment_edit"
+        android:icon="@drawable/round_add_24"
+        android:title="编辑文章" />
+
+    <item
+        android:id="@+id/fragment_news_message_edit"
+        android:icon="@drawable/round_add_24"
+        android:title="编辑新闻" />
 </menu>

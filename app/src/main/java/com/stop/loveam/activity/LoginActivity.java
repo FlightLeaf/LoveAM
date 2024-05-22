@@ -34,22 +34,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mEtUser = findViewById(R.id.et_1);
         mEtPassword = findViewById(R.id.et_2);
         //实现直接跳转注册页面
-        mBtnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = null;
-                intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
+        mBtnRegister.setOnClickListener(view -> {
+            Intent intent = null;
+            intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
 
         //返回到主页面,销毁该页面
-        findViewById(R.id.fanhui1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        findViewById(R.id.fanhui1).setOnClickListener(view -> finish());
         //匹配对应账号密码才能登录
         mBtnLogin.setOnClickListener(this);
     }

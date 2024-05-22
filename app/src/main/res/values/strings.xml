@@ -11,6 +11,8 @@
     <string name="recommend">推荐</string>
     <string name="video">视频</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="edit_message">编辑信息</string>
+    <string name="edit_text">编辑文章</string>
 
     <!-- 消息设置 -->
     <string name="messages_header">消息设置</string>
@@ -38,6 +40,11 @@
         <item>默认主题</item>
         <item>浅色主题</item>
         <item>深色主题</item>
+    </string-array>
+
+    <string-array name="news_options">
+        <item name="add_title">上传文章</item>
+        <item name="add_video">上传视频</item>
     </string-array>
 
     <string-array name="theme_values">

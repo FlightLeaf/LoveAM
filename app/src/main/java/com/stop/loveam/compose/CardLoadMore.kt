@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshotFlow
@@ -13,12 +14,11 @@ import androidx.compose.runtime.snapshotFlow
 @Composable
 fun LoadMoreList() {
     val listState = rememberLazyListState()
-    // 使用mutableStateListOf来构建可变的String列表
-    val list = remember {
-        mutableStateListOf<String>().apply {
-            for (i in 0..20) {
-                add("Item $i")
-            }
+    val list: MutableList<String> = remember { mutableStateListOf() }
+    //初始化页面
+    SideEffect {
+        for (i in 1..10) {
+            list.add("Item $i")
         }
     }
 
@@ -37,10 +37,9 @@ fun LoadMoreList() {
     LaunchedEffect(listState) {
         snapshotFlow { listState.firstVisibleItemIndex }
             .collect { index ->
-                // 检查是否接近列表的底部
-                if (index >= (listState.layoutInfo.totalItemsCount - 6)) {
+                Log.d("LoadMoreList", "firstVisibleItemIndex: $index")
+                if (index >= (listState.layoutInfo.totalItemsCount - 7)) {
                     Log.d("LoadMoreList", "到达底部")
-                    // 在列表末尾添加更多项目
                     for (i in list.size..list.size + 10) {
                         list.add("Item $i")
                     }

@@ -27,7 +27,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
             sHelper = new UserDbHelper(context, DB_NAME, null, VERSION);
         }
         return sHelper;
-}
+    }
     @Override
     public void onCreate(SQLiteDatabase db) {
         //创建user_table表
@@ -36,51 +36,49 @@ public class UserDbHelper extends SQLiteOpenHelper {
                 "password text," +      //密码
                 "nickname integer" +       // 注册类型   0---用户   1---管理员
                 ")");
-
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-//登录
-@SuppressLint("Range")
-public UserInfo login(String username) {
-    //获取SQLiteDatabase实例
-    SQLiteDatabase db = getReadableDatabase();
-    UserInfo userInfo = null;
-    String sql = "select user_id,username,password,nickname  from user_table where username=?";
-    String[] selectionArgs = {username};
-    Cursor cursor = db.rawQuery(sql, selectionArgs);
-    if (cursor.moveToNext()) {
-        int user_id = cursor.getInt(cursor.getColumnIndex("user_id"));
-        String name = cursor.getString(cursor.getColumnIndex("username"));
-        String password = cursor.getString(cursor.getColumnIndex("password"));
-        String nickname = cursor.getString(cursor.getColumnIndex("nickname"));
-        userInfo = new UserInfo(user_id, name, password, nickname);
+    //登录
+    @SuppressLint("Range")
+    public UserInfo login(String username) {
+        //获取SQLiteDatabase实例
+        SQLiteDatabase db = getReadableDatabase();
+        UserInfo userInfo = null;
+        String sql = "select user_id,username,password,nickname  from user_table where username=?";
+        String[] selectionArgs = {username};
+        Cursor cursor = db.rawQuery(sql, selectionArgs);
+        if (cursor.moveToNext()) {
+            int user_id = cursor.getInt(cursor.getColumnIndex("user_id"));
+            String name = cursor.getString(cursor.getColumnIndex("username"));
+            String password = cursor.getString(cursor.getColumnIndex("password"));
+            String nickname = cursor.getString(cursor.getColumnIndex("nickname"));
+            userInfo = new UserInfo(user_id, name, password, nickname);
+        }
+        cursor.close();
+        db.close();
+        return userInfo;
     }
-    cursor.close();
-    db.close();
-    return userInfo;
-}
 
 
-//注册
-public int register(String username, String password, String nickname) {
-    //获取SQLiteDatabase实例
-    SQLiteDatabase db = getWritableDatabase();
-    ContentValues values = new ContentValues();
-    //填充占位符
-    values.put("username", username);
-    values.put("password", password);
-    values.put("nickname", nickname);
-    String nullColumnHack = "values(null,?,?,?)";
-    //执行
-    int insert = (int) db.insert("user_table", nullColumnHack, values);
-    db.close();
-    return insert;
-}
+    //注册
+    public int register(String username, String password, String nickname) {
+        //获取SQLiteDatabase实例
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        //填充占位符
+        values.put("username", username);
+        values.put("password", password);
+        values.put("nickname", nickname);
+        String nullColumnHack = "values(null,?,?,?)";
+        //执行
+        int insert = (int) db.insert("user_table", nullColumnHack, values);
+        db.close();
+        return insert;
+    }
 
 
 }

@@ -10,8 +10,6 @@ import androidx.compose.ui.tooling.preview.Preview
 fun CardList() {
     Column(
         modifier = Modifier.fillMaxWidth()
-        //监听上滑手势
-
     ) {
         CardNewsBig()
         CardNewsSmall()

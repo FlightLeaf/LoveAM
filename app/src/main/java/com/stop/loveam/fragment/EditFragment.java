@@ -1,18 +1,24 @@
-package com.stop.loveam.activity;
+package com.stop.loveam.fragment;
+
+import static com.luck.picture.lib.thread.PictureThreadUtils.runOnUiThread;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
+import android.os.Environment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.luck.picture.lib.basic.PictureSelector;
@@ -33,7 +39,7 @@ import java.util.ArrayList;
 import jp.wasabeef.richeditor.RichEditor;
 import yuku.ambilwarna.AmbilWarnaDialog;
 
-public class EditActivity extends AppCompatActivity {
+public class EditFragment extends Fragment {
 
     private RichEditor mEditor;
 
@@ -41,26 +47,31 @@ public class EditActivity extends AppCompatActivity {
     int initialColor = Color.BLACK; // 初始颜色
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit);
+    }
 
-        mEditor = findViewById(R.id.editor);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_edit, container, false);
+
+        mEditor = view.findViewById(R.id.editor);
         mEditor.setEditorHeight(266);
         mEditor.setEditorFontSize(22);
         mEditor.setEditorFontColor(Color.BLACK);
         mEditor.setPadding(10, 10, 10, 10);
         mEditor.setPlaceholder("点击即可输入……");
 
-        findViewById(R.id.undo).setOnClickListener(v -> mEditor.undo());
-        findViewById(R.id.redo).setOnClickListener(v -> mEditor.redo());
-        findViewById(R.id.bold).setOnClickListener(v -> mEditor.setBold());
-        findViewById(R.id.italic).setOnClickListener(v -> mEditor.setItalic());
-        findViewById(R.id.underline).setOnClickListener(v -> mEditor.setUnderline());
-        findViewById(R.id.strikethrough).setOnClickListener(v -> mEditor.setStrikeThrough());
-        ImageButton colorButton = findViewById(R.id.color);
+        view.findViewById(R.id.undo).setOnClickListener(v -> mEditor.undo());
+        view.findViewById(R.id.redo).setOnClickListener(v -> mEditor.redo());
+        view.findViewById(R.id.bold).setOnClickListener(v -> mEditor.setBold());
+        view.findViewById(R.id.italic).setOnClickListener(v -> mEditor.setItalic());
+        view.findViewById(R.id.underline).setOnClickListener(v -> mEditor.setUnderline());
+        view.findViewById(R.id.strikethrough).setOnClickListener(v -> mEditor.setStrikeThrough());
+        ImageButton colorButton = view.findViewById(R.id.color);
         colorButton.setOnClickListener(v -> {
-            AmbilWarnaDialog colorPickerDialog = new AmbilWarnaDialog(this, initialColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+            AmbilWarnaDialog colorPickerDialog = new AmbilWarnaDialog(getActivity(), initialColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
                 @Override
                 public void onOk(AmbilWarnaDialog dialog, int color) {
                     ColorStateList tint = ColorStateList.valueOf(color);
@@ -76,24 +87,24 @@ public class EditActivity extends AppCompatActivity {
             });
             colorPickerDialog.show();
         });
-        findViewById(R.id.heading1).setOnClickListener(v -> mEditor.setHeading(1));
-        findViewById(R.id.heading2).setOnClickListener(v -> mEditor.setHeading(2));
-        findViewById(R.id.heading3).setOnClickListener(v -> mEditor.setHeading(3));
+        view.findViewById(R.id.heading1).setOnClickListener(v -> mEditor.setHeading(1));
+        view.findViewById(R.id.heading2).setOnClickListener(v -> mEditor.setHeading(2));
+        view.findViewById(R.id.heading3).setOnClickListener(v -> mEditor.setHeading(3));
 
-        findViewById(R.id.bullet).setOnClickListener(v -> mEditor.setBullets());
-        findViewById(R.id.number).setOnClickListener(v -> mEditor.setNumbers());
-        findViewById(R.id.indent).setOnClickListener(v -> mEditor.setIndent());
-        findViewById(R.id.outdent).setOnClickListener(v -> mEditor.setOutdent());
+        view.findViewById(R.id.bullet).setOnClickListener(v -> mEditor.setBullets());
+        view.findViewById(R.id.number).setOnClickListener(v -> mEditor.setNumbers());
+        view.findViewById(R.id.indent).setOnClickListener(v -> mEditor.setIndent());
+        view.findViewById(R.id.outdent).setOnClickListener(v -> mEditor.setOutdent());
 
-        findViewById(R.id.underline).setOnClickListener(v -> mEditor.setUnderline());
+        view.findViewById(R.id.underline).setOnClickListener(v -> mEditor.setUnderline());
 
-        findViewById(R.id.size).setOnClickListener(v -> mEditor.setFontSize(22));
-        findViewById(R.id.left).setOnClickListener(v -> mEditor.setAlignLeft());
-        findViewById(R.id.center).setOnClickListener(v -> mEditor.setAlignCenter());
-        findViewById(R.id.right).setOnClickListener(v -> mEditor.setAlignRight());
-        findViewById(R.id.pic).setOnClickListener(v -> {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+        view.findViewById(R.id.size).setOnClickListener(v -> mEditor.setFontSize(22));
+        view.findViewById(R.id.left).setOnClickListener(v -> mEditor.setAlignLeft());
+        view.findViewById(R.id.center).setOnClickListener(v -> mEditor.setAlignCenter());
+        view.findViewById(R.id.right).setOnClickListener(v -> mEditor.setAlignRight());
+        view.findViewById(R.id.pic).setOnClickListener(v -> {
+            if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
             } else {
                 PictureSelector.create(this)
                         .openGallery(SelectMimeType.ofImage())
@@ -136,10 +147,10 @@ public class EditActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.save).setOnClickListener(v -> {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        view.findViewById(R.id.save).setOnClickListener(v -> {
+            if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
             }
 
             if (mEditor.getHtml() != null) {
@@ -162,13 +173,14 @@ public class EditActivity extends AppCompatActivity {
                     fileOutputStream.close();
 
                     // 弹出消息提示保存成功
-                    Toast.makeText(this, "文件保存成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "文件保存成功", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     Log.e("TAG", "save: " + e.getMessage());
-                    Toast.makeText(this, "保存失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "保存失败", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+        return view;
     }
 }

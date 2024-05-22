@@ -4,23 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.HomeActivity">
+    android:orientation="vertical"
+    tools:context=".activity.AddNewsActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/expandable_bottom_bar"
-        android:layout_alignParentTop="true"
         android:background="@color/white"
+        android:layout_alignParentTop="true"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
-        android:id="@+id/layout"/>
-
-    <github.com.st235.lib_expandablebottombar.ExpandableBottomBar
-        android:id="@+id/expandable_bottom_bar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        app:exb_backgroundColor="#FFFFFF"
-        app:exb_itemInactiveColor="#000" />
+        android:id="@+id/layout_add_news"/>
 </RelativeLayout>

@@ -1,5 +1,9 @@
 package com.stop.loveam.fragment;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,11 +15,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.stop.loveam.R;
 import com.stop.loveam.activity.EditActivity;
 import com.stop.loveam.activity.UserActivity;
+import com.stop.loveam.temp.HomeWorkSQLTestActivity;
+import com.stop.loveam.utils.PgSQLConn;
+
+import java.io.FileOutputStream;
 
 import io.flutter.embedding.android.FlutterActivity;
 
@@ -101,12 +111,53 @@ public class MineFragment extends Fragment {
 
         Button button4 = view.findViewById(R.id.buttonGo4);
         button4.setOnClickListener(v -> {
-            startActivity(FlutterActivity.createDefaultIntent(getActivity()));
+//            startActivity(FlutterActivity.createDefaultIntent(getActivity()));
+//            new Thread(() -> {
+//                PgSQLConn.init();
+//                PgSQLConn.addUpdDel("insert into news(id, title, description, imageUrl, date, source, likes, url) values('1', 'title', 'description', 'imageUrl', 'date', 'source', 'likes', 'url')");
+//            }).start();
         });
 
         ImageView imageView = view.findViewById(R.id.set_image);
         imageView.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), EditActivity.class);
+            startActivity(intent);
+        });
+
+        view.findViewById(R.id.buttonGo5).setOnClickListener(v->{
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+            } else {
+
+            }
+        });
+
+        view.findViewById(R.id.buttonGo6).setOnClickListener(v->{
+            String file_name = "hello.txt";
+            String current = "Hello 5:20AM";
+            try {
+                FileOutputStream fos = requireContext().openFileOutput(file_name, Context.MODE_PRIVATE);
+                fos.write(current.getBytes());
+                fos.close();
+                if (requireContext().getFileStreamPath(file_name).exists()){
+                    Toast.makeText(requireContext(), "写入成功", Toast.LENGTH_SHORT).show();
+                }
+            }catch (Exception e){
+                Toast.makeText(requireContext(), "写入失败", Toast.LENGTH_SHORT).show();
+                Log.d("error", e.toString());
+            }
+        });
+
+        view.findViewById(R.id.buttonGo7).setOnClickListener(v -> {
+            SharedPreferences sp = requireContext().getSharedPreferences("user", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putString("name", "张三");
+            editor.putInt("age", 8);
+            editor.commit();
+        });
+
+        view.findViewById(R.id.buttonGo8).setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), HomeWorkSQLTestActivity.class);
             startActivity(intent);
         });
 

@@ -67,9 +67,9 @@ public class HomeActivity extends AppCompatActivity {
             return null;
         });
 
-        bottomBar.setOnItemReselectedListener((view, item, byUser) -> {
-            Log.d(TAG, "reselected: " + item.toString());
-            return null;
-        });
+//        bottomBar.setOnItemReselectedListener((view, item, byUser) -> {
+//            Log.d(TAG, "reselected: " + item.toString());
+//            return null;
+//        });
     }
 }
