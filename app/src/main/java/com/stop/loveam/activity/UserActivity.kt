@@ -7,7 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.stop.loveam.R
 import com.stop.loveam.compose.LoadMoreList
-import com.stop.loveam.compose.UPCButtonGroup
 
 class UserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

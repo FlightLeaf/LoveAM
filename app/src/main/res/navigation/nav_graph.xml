@@ -31,10 +31,4 @@
         android:label="fragment_follow"
         tools:layout="@layout/fragment_follow" />
 
-    <fragment
-        android:id="@+id/fragment_recommend"
-        android:name="com.stop.loveam.fragment.RecommendFragment"
-        android:label="fragment_recommend"
-        tools:layout="@layout/fragment_recommend" />
-
 </navigation>

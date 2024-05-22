@@ -1,11 +1,11 @@
 package com.stop.loveam.fragment;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,11 +23,8 @@ import com.stop.loveam.R;
 import com.stop.loveam.activity.EditActivity;
 import com.stop.loveam.activity.UserActivity;
 import com.stop.loveam.temp.HomeWorkSQLTestActivity;
-import com.stop.loveam.utils.PgSQLConn;
 
 import java.io.FileOutputStream;
-
-import io.flutter.embedding.android.FlutterActivity;
 
 public class MineFragment extends Fragment {
 

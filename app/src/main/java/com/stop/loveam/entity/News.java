@@ -1,105 +1,87 @@
 package com.stop.loveam.entity;
 
-import com.google.gson.Gson;
 
 public class News {
 
-    private String id;
-    private String title;
-    private String description;
-    private String imageUrl;
-    private String date;
-    private String source;
-    private String likes;
-    private String url;
-
-    public News(){
-
-    }
-
-    public News(String id, String title, String description, String imageUrl, String date, String source, String likes, String url) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.date = date;
-        this.source = source;
-        this.likes = likes;
-        this.url = url;
-    }
+  private long id;
+  private String title;
+  private String description;
+  private String imageurl;
+  private java.sql.Timestamp createdAt;
+  private String email;
+  private long likes;
+  private String url;
 
 
-    public static News fromJson(String jsonString) {
-        return new Gson().fromJson(jsonString, News.class);
-    }
+  public long getId() {
+    return id;
+  }
 
-    // ToJSON方法
-    public String toJson() {
-        return new Gson().toJson(this);
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
-    public String getDescription() {
-        return description;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
+  public String getImageurl() {
+    return imageurl;
+  }
 
-    public String getDate() {
-        return date;
-    }
+  public void setImageurl(String imageurl) {
+    this.imageurl = imageurl;
+  }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
 
-    public String getSource() {
-        return source;
-    }
+  public java.sql.Timestamp getCreatedAt() {
+    return createdAt;
+  }
 
-    public void setSource(String source) {
-        this.source = source;
-    }
+  public void setCreatedAt(java.sql.Timestamp createdAt) {
+    this.createdAt = createdAt;
+  }
 
-    public String getLikes() {
-        return likes;
-    }
 
-    public void setLikes(String likes) {
-        this.likes = likes;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public String getUrl() {
-        return url;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+
+  public long getLikes() {
+    return likes;
+  }
+
+  public void setLikes(long likes) {
+    this.likes = likes;
+  }
+
+
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
 }
-

@@ -81,6 +81,7 @@ public class TempActivity extends AppCompatActivity {
                     assert response.body() != null;
                     Log.e(TAG, "Upload failed: " + response.body().string());
                 }
+                return null;
             }
         });
     }

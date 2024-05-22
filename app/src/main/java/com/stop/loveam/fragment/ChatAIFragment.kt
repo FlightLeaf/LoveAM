@@ -1,7 +1,7 @@
 package com.stop.loveam.fragment
 
-import android.annotation.SuppressLint
-import android.app.Dialog
+import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,16 +9,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.stop.loveam.R
-import com.stop.loveam.compose.UPCButtonGroup
-import com.stop.loveam.view.NewsFileAdapter
-
-import android.app.AlertDialog
-import android.content.DialogInterface
-import android.content.Intent
 import com.stop.loveam.activity.AddNewsActivity
+import com.stop.loveam.compose.UPCButtonGroup
 
 class ChatAIFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.stop.loveam.entities;
+package com.stop.loveam.entity;
 
 
 public class User {

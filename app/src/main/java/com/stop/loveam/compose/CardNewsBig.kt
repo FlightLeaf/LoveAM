@@ -1,7 +1,6 @@
 package com.stop.loveam.compose
 
 import android.content.Intent
-import android.content.res.Resources
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +26,6 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.stop.loveam.activity.SettingsActivity
-import com.stop.loveam.entity.News
 
 @Composable
 fun CardNewsBig() {

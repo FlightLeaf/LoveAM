@@ -49,6 +49,7 @@ public class HttpUtils  {
                     assert response.body() != null;
                     callback.onFailure("Upload failed: " + response.body().string());
                 }
+                return null;
             }
         });
     }
