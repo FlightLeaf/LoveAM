@@ -22,6 +22,10 @@ import androidx.fragment.app.Fragment;
 import com.stop.loveam.R;
 import com.stop.loveam.activity.EditActivity;
 import com.stop.loveam.activity.UserActivity;
+import com.stop.loveam.dao.Impl.NewsDaoImpl;
+import com.stop.loveam.dao.NewsDao;
+import com.stop.loveam.temp.HomeWorkBaiduAIActivity;
+import com.stop.loveam.temp.HomeWorkHtmlActivity;
 import com.stop.loveam.temp.HomeWorkSQLTestActivity;
 
 import java.io.FileOutputStream;
@@ -29,6 +33,8 @@ import java.io.FileOutputStream;
 public class MineFragment extends Fragment {
 
     int selected = -1;
+
+    NewsDao newsDao = new NewsDaoImpl();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -155,6 +161,14 @@ public class MineFragment extends Fragment {
 
         view.findViewById(R.id.buttonGo8).setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), HomeWorkSQLTestActivity.class);
+            startActivity(intent);
+        });
+
+        view.findViewById(R.id.buttonGo9).setOnClickListener(v -> {
+//            new Thread(() -> {
+//                newsDao.get_news(1);
+//            }).start();
+            Intent intent = new Intent(getActivity(), HomeWorkBaiduAIActivity.class);
             startActivity(intent);
         });
 

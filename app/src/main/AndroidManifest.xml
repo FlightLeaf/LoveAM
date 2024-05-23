@@ -47,6 +47,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".temp.HomeWorkBaiduAIActivity"
+            android:exported="false" />
+        <activity
+            android:name=".temp.HomeWorkHtmlActivity"
+            android:exported="false" />
+        <activity
             android:name=".temp.HomeWorkSQLResActivity"
             android:exported="false" />
         <activity

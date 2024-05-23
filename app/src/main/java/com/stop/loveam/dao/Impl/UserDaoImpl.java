@@ -27,7 +27,7 @@ public class UserDaoImpl implements UserDao {
 
     String tag = "UserDaoImpl";
 
-    String api = "http://your-server/";
+    String api = "http://114.55.94.213:5008";
 
     public UserDaoImpl() {
         this.client = new OkHttpClient();

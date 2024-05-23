@@ -22,13 +22,9 @@ public class NewsDaoImpl implements NewsDao {
     private static final String tag = "NewsDaoImpl";
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
-    private final OkHttpClient client;
+    private final OkHttpClient client = new OkHttpClient();
 
-    String api = "";
-
-    public NewsDaoImpl(OkHttpClient client) {
-        this.client = client;
-    }
+    String api = "http://114.55.94.213:5008";
 
     @Override
     public boolean add_news(News news) {
@@ -153,15 +149,12 @@ public class NewsDaoImpl implements NewsDao {
                 .post( body)
                 .build();
 
-
-
         try (Response response = client.newCall(request).execute()) {
             if (response.isSuccessful()) {
                 assert response.body() != null;
                 String responseData = response.body().string();
-
+                Log.d(tag, responseData);
                 //TODO 解析JSON数据
-
                 return null;
             } else {
                 Log.e(tag, "search_news failed, response code: " + response.code());
@@ -196,6 +189,8 @@ public class NewsDaoImpl implements NewsDao {
             if (response.isSuccessful()) {
                 assert response.body() != null;
                 String responseData = response.body().string();
+                Log.d(tag, responseData);
+                //TODO 解析JSON数据
                 return null;
             } else {
                 Log.e(tag, "get_news failed, response code: " + response.code());
@@ -218,7 +213,8 @@ public class NewsDaoImpl implements NewsDao {
             if (response.isSuccessful()) {
                 assert response.body() != null;
                 String responseData = response.body().string();
-
+                Log.d(tag, responseData);
+                //TODO 解析JSON数据
                 //TODO 解析JSON数据
 
                 return null;
