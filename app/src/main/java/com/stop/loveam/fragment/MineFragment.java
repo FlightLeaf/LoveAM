@@ -80,10 +80,6 @@ public class MineFragment extends Fragment {
             editor.apply();
         });
 
-        view.findViewById(R.id.buttonGo10).setOnClickListener(v -> {
-
-        });
-
         return view;
     }
 }
