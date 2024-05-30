@@ -20,7 +20,6 @@ import com.stop.loveam.activity.SettingsActivity;
 import com.stop.loveam.activity.UserActivity;
 import com.stop.loveam.dao.Impl.NewsDaoImpl;
 import com.stop.loveam.dao.NewsDao;
-import com.stop.loveam.temp.HomeWorkLocationActivity;
 
 import java.io.FileOutputStream;
 
@@ -82,8 +81,7 @@ public class MineFragment extends Fragment {
         });
 
         view.findViewById(R.id.buttonGo10).setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), HomeWorkLocationActivity.class);
-            startActivity(intent);
+
         });
 
         return view;

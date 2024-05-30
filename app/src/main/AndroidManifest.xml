@@ -6,7 +6,8 @@
         android:name="android.hardware.camera"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -48,39 +49,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".temp.HomeWorkLocationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".temp.HomeWorkSensorStepsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".temp.HomeWorkSensorActivity"
-            android:exported="false" />
-
-        <service
-            android:name=".temp.HomeWorkFirstService"
-            android:enabled="true"
-            android:exported="true" />
-
-        <activity
-            android:name=".temp.HomeWorkVideoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ReadingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".temp.HomeWorkBaiduAIActivity"
-            android:exported="false" />
-        <activity
-            android:name=".temp.HomeWorkHtmlActivity"
-            android:exported="false" />
-        <activity
-            android:name=".temp.HomeWorkSQLResActivity"
-            android:exported="false" />
-        <activity
-            android:name=".temp.HomeWorkSQLTestActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.AddNewsActivity"
             android:exported="false" />
         <activity
@@ -106,18 +74,6 @@
             android:name=".activity.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".temp.HomeWorkSelectClassActivity"
-            android:exported="false" />
-        <activity
-            android:name=".temp.HomeWorkSelectTimeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".temp.HomeWorkSelectActivity"
-            android:exported="false" />
-        <activity
-            android:name=".temp.HomeWorkLoginActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
@@ -125,9 +81,6 @@
             android:name=".activity.RegisterActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".temp.HomeWorkRecordActivity"
-            android:exported="false" />
         <activity
             android:name=".activity.HomeActivity"
             android:exported="false" />
