@@ -1,14 +1,28 @@
 package com.stop.loveam.entity;
 
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
   private String email;
   private String name;
   private String password;
   private String image;
   private String label;
-  private java.sql.Timestamp createdAt;
+  private String createdAt;
+
+  public User() {
+  }
+
+  public User(String email, String name, String password, String image, String label, String createdAt) {
+    this.email = email;
+    this.name = name;
+    this.password = password;
+    this.image = image;
+    this.label = label;
+    this.createdAt = createdAt;
+  }
 
 
   public String getEmail() {
@@ -56,11 +70,11 @@ public class User {
   }
 
 
-  public java.sql.Timestamp getCreatedAt() {
+  public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(java.sql.Timestamp createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 

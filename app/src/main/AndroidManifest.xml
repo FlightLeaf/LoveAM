@@ -6,6 +6,7 @@
         android:name="android.hardware.camera"
         android:required="false" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -47,6 +48,27 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".temp.HomeWorkLocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".temp.HomeWorkSensorStepsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".temp.HomeWorkSensorActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".temp.HomeWorkFirstService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".temp.HomeWorkVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ReadingActivity"
+            android:exported="false" />
+        <activity
             android:name=".temp.HomeWorkBaiduAIActivity"
             android:exported="false" />
         <activity
@@ -74,9 +96,6 @@
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activity.PlayerActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings" />
@@ -100,9 +119,14 @@
             android:exported="false" />
         <activity
             android:name=".activity.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".temp.HomeWorkRecordActivity"
             android:exported="false" />
         <activity
             android:name=".activity.HomeActivity"

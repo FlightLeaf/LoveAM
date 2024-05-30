@@ -5,15 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".fragment.FollowFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_view_follow"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:text="关注"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="34sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
 
 </FrameLayout>

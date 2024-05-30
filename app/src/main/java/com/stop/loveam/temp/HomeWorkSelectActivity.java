@@ -18,8 +18,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stop.loveam.R;
-import com.stop.loveam.entity.ClassInfo;
-import com.stop.loveam.entity.SelectClass;
 
 import java.util.ArrayList;
 import java.util.List;

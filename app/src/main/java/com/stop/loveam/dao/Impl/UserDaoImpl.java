@@ -2,6 +2,9 @@ package com.stop.loveam.dao.Impl;
 
 import android.util.Log;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.stop.loveam.dao.UserDao;
 import com.stop.loveam.entity.User;
 
@@ -9,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -25,9 +29,11 @@ public class UserDaoImpl implements UserDao {
     private final OkHttpClient client;
     private final MediaType mediaType;
 
+    private JSONObject jsonObject;
+
     String tag = "UserDaoImpl";
 
-    String api = "http://114.55.94.213:5008";
+    String api = "http://117.72.69.162:5008";
 
     public UserDaoImpl() {
         this.client = new OkHttpClient();
@@ -37,7 +43,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public boolean login(String email, String password) {
         // 创建登录请求的 JSON 数据
-        JSONObject jsonObject = new JSONObject();
+        jsonObject = new JSONObject();
         try {
             jsonObject.put("email", email);
             jsonObject.put("password", password);
@@ -68,7 +74,11 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean register(User user) {
-        JSONObject jsonObject = new JSONObject();
+        jsonObject = new JSONObject();
+        if(!Objects.equals(UserDaoImpl.code, code)){
+            //Toast.makeText(null, "验证码错误", Toast.LENGTH_SHORT).show();
+            return false;
+        }
         try {
             jsonObject.put("email", user.getEmail());
             jsonObject.put("name", user.getName());
@@ -104,7 +114,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public boolean send(String email) {
         code = String.valueOf((int)(Math.random()*1000000));
-        JSONObject jsonObject = new JSONObject();
+        jsonObject = new JSONObject();
         try {
             jsonObject.put("email", email);
             jsonObject.put("code", code);
@@ -136,7 +146,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean modify_password(String email, String new_password) {
-        JSONObject jsonObject = new JSONObject();
+        jsonObject = new JSONObject();
         try {
             jsonObject.put("email", email);
             jsonObject.put("new_password", new_password);
@@ -168,7 +178,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean modify_user_info(User user) {
-        JSONObject jsonObject = new JSONObject();
+        jsonObject = new JSONObject();
         try {
             jsonObject.put("email", user.getEmail());
             jsonObject.put("name", user.getName());
@@ -202,7 +212,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User get_user_info(String email) {
-        JSONObject jsonObject = new JSONObject();
+        jsonObject = new JSONObject();
         try {
             jsonObject.put("email", email);
         } catch (JSONException e) {
@@ -217,9 +227,26 @@ public class UserDaoImpl implements UserDao {
         try (Response response = client.newCall(request).execute()) {
             if (response.isSuccessful()) {
                 assert response.body() != null;
-                String responseData = response.body().string();
-                // TODO: 解析 JSON 数据，并返回 User 对象
-                Log.d(tag, "Response data: " + responseData);
+                String responseData = response.body().string(); // 将响应体转换为字符串
+                Log.d(tag, responseData); // 日志记录响应数据
+                JsonParser parser = new JsonParser(); // 创建JsonParser实例
+                JsonObject json = parser.parse(responseData).getAsJsonObject(); // 将响应数据解析为JsonObject
+                JsonElement data = json.getAsJsonObject().get("data");
+                System.out.println("Data: " + data);
+
+                JsonElement user_email = data.getAsJsonArray().get(0);
+                JsonElement name = data.getAsJsonArray().get(1);
+                JsonElement imageUrl = data.getAsJsonArray().get(2);
+                JsonElement description = data.getAsJsonArray().get(3);
+                JsonElement date = data.getAsJsonArray().get(4);
+
+                User user = new User();
+                user.setEmail(user_email.getAsString());
+                user.setName(name.getAsString());
+                user.setImage(imageUrl.getAsString());
+                user.setLabel(description.getAsString());
+                user.setCreatedAt(date.getAsString());
+                return user;
             }
         } catch (IOException e) {
             Log.e(tag, "IOException: " + e.getMessage());

@@ -6,14 +6,16 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.stop.loveam.R;
-import com.stop.loveam.explore.AmendFragment;
-import com.stop.loveam.explore.CalendarFragment;
-import com.stop.loveam.explore.EnglishFragment;
-import com.stop.loveam.explore.HeadFragment;
-import com.stop.loveam.explore.OptimizationFragment;
-import com.stop.loveam.explore.SceneryFragment;
-import com.stop.loveam.explore.StarFragment;
-import com.stop.loveam.explore.WorldFragment;
+import com.stop.loveam.fragment.explore.AmendFragment;
+import com.stop.loveam.fragment.explore.CalendarFragment;
+import com.stop.loveam.fragment.explore.EnglishFragment;
+import com.stop.loveam.fragment.explore.FileFragment;
+import com.stop.loveam.fragment.explore.HeadFragment;
+import com.stop.loveam.fragment.explore.OptimizationFragment;
+import com.stop.loveam.fragment.explore.SceneryFragment;
+import com.stop.loveam.fragment.explore.StarFragment;
+import com.stop.loveam.fragment.explore.WorldFragment;
+import com.stop.loveam.style.ColorTools;
 
 import java.util.Objects;
 
@@ -23,6 +25,7 @@ public class ExploreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explore);
+        ColorTools.setStatusBarColor(this, R.color.white);
         try {
             String data = getIntent().getStringExtra("key");
             switch (Objects.requireNonNull(data)){
@@ -51,7 +54,7 @@ public class ExploreActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CalendarFragment()).commit();
                     break;
                 case "file":
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new com.stop.loveam.explore.FileFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FileFragment()).commit();
                     break;
             }
         } catch (Exception e) {

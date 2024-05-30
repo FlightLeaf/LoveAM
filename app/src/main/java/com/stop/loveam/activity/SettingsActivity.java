@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.stop.loveam.R;
+import com.stop.loveam.style.ColorTools;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
+        ColorTools.setStatusBarColor(this, R.color.white);
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()

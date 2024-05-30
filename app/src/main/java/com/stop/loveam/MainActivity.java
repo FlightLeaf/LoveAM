@@ -1,6 +1,8 @@
 package com.stop.loveam;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -30,4 +32,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences sp = getSharedPreferences("user", Context.MODE_PRIVATE);
+        if(sp.getBoolean("isLogin", false)){
+            Intent intent = null;
+            intent = new Intent(MainActivity.this, HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+        }
+    }
 }

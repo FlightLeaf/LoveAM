@@ -1,6 +1,5 @@
 package com.stop.loveam.temp;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -21,8 +20,6 @@ public class HomeWorkSelectTimeActivity extends AppCompatActivity {
     Button ok;
     Button back;
 
-
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

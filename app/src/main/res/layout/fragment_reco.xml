@@ -5,17 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragment.RecoFragment">
-
-    <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/compose_view_big"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
-
     <androidx.compose.ui.platform.ComposeView
         android:id="@+id/compose_view_small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints" />
-
 </LinearLayout>

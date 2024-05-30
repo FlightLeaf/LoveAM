@@ -4,7 +4,6 @@ public class UploadResponse {
     private String message;
     private String url;
 
-    // Getters and setters for the fields
     public String getMessage() {
         return message;
     }

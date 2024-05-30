@@ -1,16 +1,39 @@
 package com.stop.loveam.entity;
 
 
-public class News {
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+
+public class News  implements Serializable {
 
   private long id;
   private String title;
   private String description;
   private String imageurl;
-  private java.sql.Timestamp createdAt;
+  @SerializedName("created_at")
+  private String createdAt;
   private String email;
   private long likes;
   private String url;
+
+  private String name;
+
+  public News(){
+
+  }
+
+  public News(long id, String title, String description, String imageurl, String createdAt, String email, long likes, String url, String name) {
+    this.id = id;
+    this.title = title;
+    this.description = description;
+    this.imageurl = imageurl;
+    this.createdAt = createdAt;
+    this.email = email;
+    this.likes = likes;
+    this.url = url;
+    this.name = name;
+  }
 
 
   public long getId() {
@@ -49,11 +72,11 @@ public class News {
   }
 
 
-  public java.sql.Timestamp getCreatedAt() {
+  public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(java.sql.Timestamp createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -84,4 +107,11 @@ public class News {
     this.url = url;
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 }

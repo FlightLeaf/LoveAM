@@ -21,6 +21,7 @@ import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.interfaces.OnResultCallbackListener;
 import com.stop.loveam.R;
 import com.stop.loveam.entity.UploadResponse;
+import com.stop.loveam.style.ColorTools;
 import com.stop.loveam.utils.GlideEngine;
 import com.stop.loveam.utils.HttpUtils;
 import com.stop.loveam.utils.UploadCallback;
@@ -44,6 +45,7 @@ public class EditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+        ColorTools.setStatusBarColor(this, R.color.white);
 
         mEditor = findViewById(R.id.editor);
         mEditor.setEditorHeight(266);

@@ -12,6 +12,7 @@ import com.stop.loveam.fragment.ChatAIFragment;
 import com.stop.loveam.fragment.HomeFragment;
 import com.stop.loveam.fragment.MineFragment;
 import com.stop.loveam.fragment.VideoFragment;
+import com.stop.loveam.style.ColorTools;
 
 import github.com.st235.lib_expandablebottombar.ExpandableBottomBar;
 import github.com.st235.lib_expandablebottombar.Menu;
@@ -26,6 +27,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        ColorTools.setStatusBarColor(this, R.color.white);
 
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.layout, new HomeFragment())
@@ -66,10 +69,5 @@ public class HomeActivity extends AppCompatActivity {
             Log.d(TAG, "selected: " + item.toString());
             return null;
         });
-
-//        bottomBar.setOnItemReselectedListener((view, item, byUser) -> {
-//            Log.d(TAG, "reselected: " + item.toString());
-//            return null;
-//        });
     }
 }
