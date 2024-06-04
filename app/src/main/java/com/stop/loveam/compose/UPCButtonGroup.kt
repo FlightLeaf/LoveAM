@@ -7,8 +7,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.AlertDialog
 import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
@@ -27,6 +30,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.stop.loveam.R
 import com.stop.loveam.activity.ExploreActivity
+import com.stop.loveam.compose.widget.SquareImage
 
 @Composable
 fun UPCButtonGroup() {
@@ -77,38 +81,47 @@ fun UPCButtonGroup() {
                                             intent.putExtra("key", "scenery")
                                             context.startActivity(intent)
                                         }
+
                                         1 -> {
                                             intent.putExtra("key", "calendar")
                                             context.startActivity(intent)
                                         }
+
                                         2 -> {
                                             intent.putExtra("key", "world")
                                             context.startActivity(intent)
                                         }
+
                                         3 -> {
                                             intent.putExtra("key", "star")
                                             context.startActivity(intent)
                                         }
+
                                         4 -> {
                                             intent.putExtra("key", "file")
                                             context.startActivity(intent)
                                         }
+
                                         5 -> {
                                             intent.putExtra("key", "english")
                                             context.startActivity(intent)
                                         }
+
                                         6 -> {
                                             intent.putExtra("key", "head")
                                             context.startActivity(intent)
                                         }
+
                                         7 -> {
                                             intent.putExtra("key", "amend")
                                             context.startActivity(intent)
                                         }
+
                                         8 -> {
                                             intent.putExtra("key", "optimization")
                                             context.startActivity(intent)
                                         }
+
                                         else -> {
                                             intent.putExtra("key", "render")
                                             context.startActivity(intent)

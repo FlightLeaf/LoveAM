@@ -32,7 +32,6 @@ fun VideoCard(
     id: String = "0001",
     title: String = "5:20AM",
     time: String = "2024.5.19",
-    likeCount: String = "0",
     source: String = "水果日报",
     imgUrl: String = "https://tse1-mm.cn.bing.net/th/id/OIP-C.xLdG5RUetK3jZCBy9k-V-AHaIA?rs=1&pid=ImgDetMain"
 ) {

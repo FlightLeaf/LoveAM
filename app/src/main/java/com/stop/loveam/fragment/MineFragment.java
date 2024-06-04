@@ -18,6 +18,7 @@ import com.stop.loveam.R;
 import com.stop.loveam.activity.EditActivity;
 import com.stop.loveam.activity.SettingsActivity;
 import com.stop.loveam.activity.UserActivity;
+import com.stop.loveam.camera.CameraSurfaceViewActivity;
 import com.stop.loveam.dao.Impl.NewsDaoImpl;
 import com.stop.loveam.dao.NewsDao;
 
@@ -41,7 +42,7 @@ public class MineFragment extends Fragment {
 
         Button button3 = view.findViewById(R.id.buttonGo3);
         button3.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), UserActivity.class);
+            Intent intent = new Intent(getActivity(), CameraSurfaceViewActivity.class);
             startActivity(intent);
         });
 

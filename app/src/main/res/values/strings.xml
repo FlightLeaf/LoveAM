@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">5:20AM</string>
+    <string name="app_name">小红报</string>
     <string name="nav_header_title">x-BOOK</string>
     <string name="nav_go_to_login">点击登录……</string>
     <string name="menu_user">立即登录</string>
@@ -76,5 +76,6 @@
     <string name="userName">用户名</string>
     <string name="login_welcome_text">登录，开启全新的体验之旅！</string>
     <string name="login">登 录</string>
+    <string name="save_to_local">保存到本地</string>
 
 </resources>

@@ -26,6 +26,7 @@ public class GlideEngine implements ImageEngine {
         }
         Glide.with(context)
                 .load(url)
+                .placeholder(R.drawable.book2)
                 .into(imageView);
     }
 
@@ -91,6 +92,8 @@ public class GlideEngine implements ImageEngine {
                 .placeholder(R.drawable.book)
                 .into(imageView);
     }
+
+
 
     /**
      * 暂停所有的Glide请求。

@@ -45,7 +45,7 @@ public class ReadingActivity extends AppCompatActivity {
         mTitleNews.setText(news.getTitle());
         mNameUser.setText(news.getEmail());
         descriptionNews.setText("发表时间: "+news.getCreatedAt());
-        mNewsWebView.loadUrl("http://ocean.upc.edu.cn/");
+        // mNewsWebView.loadUrl("http://ocean.upc.edu.cn/");
 
         new Thread(() -> {
             UserDao userDao = new UserDaoImpl();
@@ -69,7 +69,7 @@ public class ReadingActivity extends AppCompatActivity {
         mNameUser = findViewById(R.id.nameUser);
         mFollowUser = findViewById(R.id.followUser);
         descriptionNews = findViewById(R.id.descriptionNews);
-        mNewsWebView = findViewById(R.id.news_webView);
+        // mNewsWebView = findViewById(R.id.news_webView);
         mCommentEditText = findViewById (R.id.comment_editText);
         mFollowBtn = findViewById(R.id.follow_btn);
     }

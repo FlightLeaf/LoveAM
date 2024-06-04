@@ -3,6 +3,8 @@ package com.stop.loveam.utils;
 import android.content.Context;
 import android.util.Log;
 
+import com.stop.loveam.entity.EnglishShortSentences;
+
 import java.io.File;
 
 public class FileHelper {
@@ -17,6 +19,7 @@ public class FileHelper {
             File tempDir = context.getCacheDir();
             // 创建临时文件
             tempFile = File.createTempFile("temp_", ".tmp", tempDir);
+            EnglishShortSentences englishShortSentences = new EnglishShortSentences();
         } catch (Exception e) {
             Log.d("TempFileHelper", "getTempFilePath: " + e.getMessage());
         }
