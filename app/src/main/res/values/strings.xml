@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">小红报</string>
+    <string name="nav_header_title">x-BOOK</string>
+    <string name="nav_go_to_login">点击登录……</string>
+    <string name="menu_user">立即登录</string>
+    <string name="home_name">首页</string>
+    <string name="video_name">视频</string>
+    <string name="ai_name">探索</string>
+    <string name="my_name">我的</string>
+    <string name="follow">关注</string>
+    <string name="recommend">推荐</string>
+    <string name="video">视频</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="edit_message">编辑信息</string>
+    <string name="edit_text">编辑文章</string>
+
+    <!-- 消息设置 -->
+    <string name="messages_header">消息设置</string>
+    <string name="signature_title">签名</string>
+    <string name="reply_title">回复设置</string>
+
+    <!-- 同步设置 -->
+    <string name="sync_header">同步设置</string>
+    <string name="sync_title">同步</string>
+    <string name="attachment_title">附件</string>
+    <string name="attachment_summary_on">同步附件</string>
+    <string name="attachment_summary_off">不同步附件</string>
+
+    <!-- 常用选项 -->
+    <string name="common_settings">常用选项</string>
+    <string name="notifications_title">通知</string>
+    <string name="notifications_summary_on">开启通知</string>
+    <string name="notifications_summary_off">关闭通知</string>
+    <string name="theme_title">主题</string>
+    <string name="language_title">语言</string>
+    <string name="clear_cache_title">清除缓存</string>
+    <string name="clear_cache_summary">清除应用缓存数据</string>
+
+    <string-array name="theme_entries">
+        <item>默认主题</item>
+        <item>浅色主题</item>
+        <item>深色主题</item>
+    </string-array>
+
+    <string-array name="news_options">
+        <item name="add_title">上传文章</item>
+        <item name="add_video">上传视频</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>default</item>
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
+    <string-array name="language_entries">
+        <item>简体中文</item>
+        <item>英语</item>
+        <!-- 添加更多语言选项 -->
+    </string-array>
+
+    <string-array name="language_values">
+        <item>zh-CN</item>
+        <item>en</item>
+        <!-- 添加更多语言代码 -->
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_title">添加标题</string>
+    <string name="search">搜  索</string>
+    <string name="register">注 册</string>
+    <string name="password">密 码</string>
+    <string name="getCode">获取验证码</string>
+    <string name="code">验证码</string>
+    <string name="email">邮箱</string>
+    <string name="userName">用户名</string>
+    <string name="login_welcome_text">登录，开启全新的体验之旅！</string>
+    <string name="login">登 录</string>
+    <string name="save_to_local">保存到本地</string>
+    <string name="upload">上传</string>
+    <string name="add_des">文章简介</string>
+
+</resources>

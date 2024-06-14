@@ -1,0 +1,53 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LoveAM" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Define common attributes here, if any -->
+    </style>
+
+    <!-- Day theme (Light theme) -->
+    <style name="Theme.LoveAM.Day" parent="Base.Theme.LoveAM">
+        <!-- Define light theme specific attributes here -->
+        <item name="android:windowBackground">@color/windowBackgroundDay</item>
+        <item name="android:textColor">@color/textColorDay</item>
+        <item name="android:colorPrimary">@color/colorPrimaryDay</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDarkDay</item>
+        <item name="android:colorAccent">@color/colorAccentDay</item>
+        <!-- ... other attributes -->
+    </style>
+
+    <!-- Night theme (Dark theme) -->
+    <style name="Theme.LoveAM.Night" parent="Base.Theme.LoveAM">
+        <!-- Define dark theme specific attributes here -->
+        <item name="android:windowBackground">@color/windowBackgroundNight</item>
+        <item name="android:textColor">@color/textColorNight</item>
+        <item name="android:colorPrimary">@color/colorPrimaryNight</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDarkNight</item>
+        <item name="android:colorAccent">@color/colorAccentNight</item>
+        <!-- ... other attributes -->
+    </style>
+
+    <style name="fragment">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Define colors for themes -->
+    <color name="windowBackgroundDay">#FFFFFF</color> <!-- Light gray -->
+    <color name="textColorDay">#000000</color> <!-- Black -->
+    <color name="colorPrimaryDay">#3F51B5</color> <!-- Blue -->
+    <color name="colorPrimaryDarkDay">#303F9F</color> <!-- Dark blue -->
+    <color name="colorAccentDay">#FF4081</color> <!-- Pink -->
+
+    <color name="windowBackgroundNight">#121212</color> <!-- Very dark gray -->
+    <color name="textColorNight">#FFFFFF</color> <!-- White -->
+    <color name="colorPrimaryNight">#000000</color> <!-- Black -->
+    <color name="colorPrimaryDarkNight">#000000</color> <!-- Black -->
+    <color name="colorAccentNight">#FF4081</color> <!-- Pink -->
+
+</resources>
